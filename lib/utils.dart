@@ -7,7 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:firebase_ui/l10n/localization.dart';
 
-enum ProvidersTypes { email, google, facebook, twitter, phone }
+enum ProvidersTypes { email, google, facebook, phone }
 
 final GoogleSignIn googleSignIn = new GoogleSignIn();
 final FacebookLogin facebookLogin = new FacebookLogin();
@@ -16,7 +16,6 @@ ProvidersTypes stringToProvidersType(String value) {
   if (value.toLowerCase().contains('facebook')) return ProvidersTypes.facebook;
   if (value.toLowerCase().contains('google')) return ProvidersTypes.google;
   if (value.toLowerCase().contains('password')) return ProvidersTypes.email;
-  if (value.toLowerCase().contains('twitter')) return ProvidersTypes.twitter;
 //TODO  if (value.toLowerCase().contains('phone')) return ProvidersTypes.phone;
   return null;
 }
@@ -97,12 +96,6 @@ Map<ProvidersTypes, ButtonDescription> providersDefinitions(
           logo: "email-logo.png",
           label: FFULocalizations.of(context).signInEmail,
           name: "Email",
-          labelColor: Colors.white),
-      ProvidersTypes.twitter: new ButtonDescription(
-          color: const Color.fromRGBO(29, 161, 242, 1.0),
-          logo: "twitter-logo.png",
-          label: FFULocalizations.of(context).signInTwitter,
-          name: "Twitter",
           labelColor: Colors.white),
     };
 

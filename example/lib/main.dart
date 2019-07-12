@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_ui/flutter_firebase_ui.dart';
@@ -80,11 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
         providers: [
           ProvidersTypes.google,
           ProvidersTypes.facebook,
-          ProvidersTypes.twitter,
           ProvidersTypes.email
         ],
-        twitterConsumerKey: "",
-        twitterConsumerSecret: "",
       );
     } else {
       return new HomeScreen(user: _currentUser);
