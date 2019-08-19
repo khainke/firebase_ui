@@ -84,7 +84,7 @@ class _LoginViewState extends State<LoginView> {
     };
 
     return new Container(
-        child: new ListView(
+        child: new Column(
             children: widget.providers.map((p) {
       return new Container(
           padding: widget.padding, child: _buttons[p] ?? new Container());
