@@ -57,22 +57,32 @@ class ButtonDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     VoidCallback _onSelected = onSelected ?? () => {};
+    MediaQueryData mediaQuery = MediaQuery.of(context);
+    double widthUnit = mediaQuery.size.height / 14;
+    double heightUnit = mediaQuery.size.width / 53;
     return new RaisedButton(
         color: color,
-        child: new Row(
+        child: Container(
+          height: 3*heightUnit,
+          width: 9*widthUnit,
+          child: new Row(
           children: <Widget>[
             new Container(
-                padding: const EdgeInsets.fromLTRB(16.0, 16.0, 32.0, 16.0),
-                child: new Image.asset('assets/$logo', package: 'firebase_ui')),
+                child: new Image.asset('assets/$logo', package: 'firebase_ui', 
+                  height: 2*heightUnit,
+                  width: 1*widthUnit,)
+                ),
             new Expanded(
               child: new Text(
                 label,
-                style: new TextStyle(color: labelColor),
+                style: new TextStyle(color: labelColor, fontWeight: FontWeight.w600),
               ),
             )
           ],
         ),
-        onPressed: _onSelected);
+      ),
+      onPressed: _onSelected
+    );
   }
 }
 
