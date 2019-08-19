@@ -44,31 +44,12 @@ class _SignInScreenState extends State<SignInScreen> {
       widget.providers ?? [ProvidersTypes.email];
 
   @override
-  Widget build(BuildContext context) => new Scaffold(
-      appBar: widget.showBar
-          ? new AppBar(
-              title: new Text(widget.title),
-              elevation: 4.0,
-            )
-          : null,
-      resizeToAvoidBottomInset: widget.avoidBottomInset,
-      body: new Builder(
-        builder: (BuildContext context) {
-          return new Container(
-              padding: const EdgeInsets.all(16.0),
-              decoration: new BoxDecoration(color: widget.color),
-              child: new Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _header,
-                  new Expanded(
-                      child: new LoginView(
+  Widget build(BuildContext context) {
+
+    return new LoginView(
                           providers: _providers,
                           passwordCheck: _passwordCheck,
-                          padding: widget.padding)),
-                  _footer
-                ],
-              ));
-        },
-      ));
+                          padding: widget.padding
+                          );
+}
 }
