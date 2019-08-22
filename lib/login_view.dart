@@ -85,10 +85,13 @@ class _LoginViewState extends State<LoginView> {
 
     return new Container(
         child: new Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: widget.providers.map((p) {
-      return new Container(
-          padding: widget.padding, child: _buttons[p] ?? new Container());
-    }).toList()));
+              return new Container(
+                    padding: widget.padding,
+                    child: _buttons[p] ?? new Container()
+                  );
+            }).toList()));
   }
 
   void _followProvider(String value) {
