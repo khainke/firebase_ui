@@ -60,25 +60,26 @@ class ButtonDescription extends StatelessWidget {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     double widthUnit = mediaQuery.size.height / 14;
     double heightUnit = mediaQuery.size.width / 53;
-    return new RaisedButton(
+    return RaisedButton(
+        padding: EdgeInsets.all(0),
         color: color,
         child: Container(
-          height: 3*heightUnit,
-          width: 9*widthUnit,
-          child: new Row(
-          children: <Widget>[
-            new Container(
-                child: new Image.asset('assets/$logo', package: 'firebase_ui', 
-                  height: 2*heightUnit,
-                  width: 1*widthUnit,)
+          height: 41,
+          width: 225,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                  padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  child: Image.asset('assets/$logo', package: 'firebase_ui', height: 20, width: 20,)
+                  ),
+              Expanded(
+                child: Text(
+                  label,
+                  style: TextStyle(color: labelColor, fontWeight: FontWeight.w600),
                 ),
-            new Expanded(
-              child: new Text(
-                label,
-                style: new TextStyle(color: labelColor, fontWeight: FontWeight.w600),
-              ),
-            )
-          ],
+              )
+            ],
         ),
       ),
       onPressed: _onSelected
