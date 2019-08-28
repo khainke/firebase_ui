@@ -85,7 +85,7 @@ class _LoginViewState extends State<LoginView> {
 
     return new Container(
         child: new Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: widget.providers.map((p) {
               return new Container(
                     padding: widget.padding,
