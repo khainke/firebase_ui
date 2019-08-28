@@ -60,7 +60,10 @@ class ButtonDescription extends StatelessWidget {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     double widthUnit = mediaQuery.size.height / 14;
     double heightUnit = mediaQuery.size.width / 53;
-    return RaisedButton(
+    return ButtonTheme(
+        height: 41,
+        child:
+          RaisedButton(
         padding: EdgeInsets.all(0),
         color: color,
         child: Container(
@@ -83,6 +86,7 @@ class ButtonDescription extends StatelessWidget {
         ),
       ),
       onPressed: _onSelected
+      ),
     );
   }
 }
