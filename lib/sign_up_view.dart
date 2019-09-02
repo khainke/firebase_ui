@@ -133,10 +133,11 @@ class _SignUpViewState extends State<SignUpView> {
 
     FirebaseAuth _auth = FirebaseAuth.instance;
     try {
-      FirebaseUser user = await _auth.createUserWithEmailAndPassword(
+      FirebaseUser user = (await _auth.createUserWithEmailAndPassword(
         email: _controllerEmail.text,
         password: _controllerPassword.text,
-      );
+      ))
+          .user;
       try {
         var userUpdateInfo = new UserUpdateInfo();
         userUpdateInfo.displayName = _controllerDisplayName.text;
